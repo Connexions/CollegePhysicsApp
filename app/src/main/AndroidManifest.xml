@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.openstax.collegephysics"
+      android:versionName="1.3" android:versionCode="4">
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <supports-screens android:smallScreens="true"
+      android:normalScreens="true"
+      android:largeScreens="true"
+      android:anyDensity="true" /> 
+    <application android:icon="@mipmap/logo" android:roundIcon="@mipmap/round_logo" android:label="@string/app_name" android:configChanges="orientation|keyboardHidden|screenSize"
+        android:theme="@style/AppTheme" android:hardwareAccelerated="true">
+        <provider android:name="org.openstax.collegephysics.providers.OSCProvider" android:authorities="org.openstax.collegephysics.providers.OSCProvider" />
+        <provider android:name="org.openstax.collegephysics.providers.NotesProvider" android:authorities="org.openstax.collegephysics.providers.NotesProvider" />
+        <activity android:name="org.openstax.collegephysics.activity.LandingActivity"
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:label="@string/app_name"
+                  android:windowSoftInputMode="stateUnchanged">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
+        </activity>
+        <activity android:name="org.openstax.collegephysics.activity.WebViewActivity" android:label="@string/app_name" android:configChanges="keyboard|keyboardHidden|screenSize|orientation" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="org.openstax.collegephysics.activity.ViewBookmarksActivity" android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="org.openstax.collegephysics.activity.NoteEditorActivity" android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar"/>
+    </application> 
+
+
+</manifest> 
